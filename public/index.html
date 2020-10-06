@@ -19,12 +19,12 @@
 
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -47,7 +47,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-      <h2>Compose Tweet</h2>
+      <h3>Compose Tweet</h3>
       <form action='/tweets/' method='POST'>
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
