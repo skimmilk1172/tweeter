@@ -4,13 +4,14 @@ $(document).ready(function() {
 
   $('textarea').keyup(function() {
     //using this.val.length to get the length of the text
-    let length = $(this).val().length;
+    let size = $(this).val().length;
     //assigning length to current length depending on value of textarea
-    let length = max - length;
+    size = max - size;
 
-    $('.counter').text(length);
+    $('.counter').text(size);
 
-    if (length >= 0) {
+    //conditional statement to make counter above or equal to 0 black and else red
+    if (size >= 0) {
       $('.counter').css( {"color": "black"})
     } else {
       $('.counter').css( {"color": "red"})
