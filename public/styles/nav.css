@@ -1,9 +1,14 @@
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 120px;
   width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
   padding: 1.5em;
+  position: fixed;
+  top: 0;
  }
 
  span.title {
@@ -15,14 +20,3 @@ nav {
   font-family: 'Source Sans Pro', sans-serif;
  }
 
- .title {
-   display: flex;
-   justify-content: flex-start;
- }
-
- .new-tweet {
-   display: flex;
-   justify-content: flex-end;
-   align-items: center;
-  
- }

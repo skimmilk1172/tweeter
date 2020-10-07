@@ -14,9 +14,9 @@ $(document).ready(function() {
 
     //conditional statement to make counter above or equal to 0 black and else red
     if (size >= 0) {
-      counter.css( {"color": "black"})
+      counter.removeClass('color-counter')
     } else {
-      counter.css( {"color": "red"})
+      counter.addClass('color-counter')
     }
   });
 });
