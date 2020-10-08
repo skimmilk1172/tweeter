@@ -48,31 +48,26 @@
     <main class="container">
       <section class="new-tweet">
 
-      <form action='/tweets/' method='POST'>
+      <form  id='new-tweet-area' action ='/tweets' method='POST'>
         
-        <textarea name="text" id="tweet-text" placeholder="What are you chripin' about?"></textarea>
+        <textarea name="text" id="tweet-area" placeholder="What are you chripin' about?"></textarea>
         <div>
           <button class='button' type="submit">Tweet</button>
+          <span class="error"></span>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
-    <article class='article-tweet'>
-      <header>
-        <h4 id='fullname'>
-          Chris. P Baycon
-        </h4>
-        <p id='username'>
-          @KrispyBakon
-        </p>
-      </header>
-      <p id='tweet'>
-        Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here Tweet goes here 
-       </p>
-      <footer>
-        time stamp
-      </footer>
-    </article>
+    <section id="tweets-container"></section>
   </main>
-  </body>
+  <button id="to-top">
+    <i id="to-top-icon" class="fas fa-angle-double-up"></i>
+  </button>
+</body>
+<!--App JS that needs to load after body-->
+<script
+  type="text/javascript"
+  src="/scripts/composer-char-counter.js"
+></script>
+<script type="text/javascript" src="/scripts/client.js"></script>
 </html>

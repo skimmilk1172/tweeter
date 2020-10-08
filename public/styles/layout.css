@@ -39,8 +39,6 @@ body {
 }
 
 article {
-  display: flex;
-  flex-direction: inherit;
   width: 90%;
   border: 1px solid black;
   border-radius: 20px;
@@ -53,7 +51,7 @@ article {
 article header {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
   background-color:white;
   border-radius: 18px;
   height: auto;
@@ -61,26 +59,26 @@ article header {
 }
 
 /* Username */
-header p {
+.tweet-handle {
   visibility: hidden;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
 }
 /* Username pop up when hovering over */
-header:hover p {
+article:hover span{
   visibility: visible;
 }
 
 /* Full Name */
-header h4 {
+header span {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: initial;
 
 }
 /* Tweet Insert */
-#tweet {
+section span {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -89,8 +87,7 @@ header h4 {
 }
 
 
-article footer {
-  position: relative;
+footer span {
   display: flex;
   padding: 10px;
   font-size: 12px;
