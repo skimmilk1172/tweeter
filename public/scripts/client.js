@@ -38,41 +38,53 @@ const renderTweets = function(tweets) {
     let $tweet = createTweetElement(tweet)
     $(`#section`).append($tweet)
   } 
-} 
- 
+}
+
+let message = false
+
+//processes the post req for tweet then starts get process to post it
 $(document).ready(() => {  
-  loadTweets()
+  loadTweets() //When doc loaded calls renderTweets 
   $('form').on('submit', event => { 
-    event.preventDefault()
+    event.preventDefault() 
+    if (message === true) {
+      slideUp()
+    } 
     const postData = $('#tweet-area').val()
-    if (isGood(postData) === true) {  
+    if (isGood(postData) === true) { 
       $.ajax({
         type: 'POST', 
         url: '/tweets', 
         data: $('#tweet-area').serialize() 
       }).then(() => {
         loadTweets()
-        $('form').trigger('reset')
+        $('form').trigger('reset') 
         $('#counter').text(140)}) 
-    } else if (isGood(postData) === false) {
-      $('form').slideDown(() => {
-        sendAlert('Your Chirp Box is Empty')
-      })
-    } else {
-      $('form').slideDown(()=> {
-        sendAlert('Your Chirp is Too Long')
+      } else if (isGood(postData) === false) {
+        message = true
+        $('form').slideDown(() => {
+          sendAlert('Your Chirp Box is Empty')
+        })
+      } else {
+        $('form').slideDown(()=> {
+          message = true 
+          sendAlert('Your Chirp is Too Long')
       })
     }
   }) 
 }) 
 
+//Slide up 
+const slideUp = function () {
+$('.error').slideUp(() => {
+  // shouldn't do anything here
+  })
+};
+
 const sendAlert = function (errorType) {
-  $('.error').text(errorType) 
+  $('.error').text(errorType)             
   $('.error').slideDown(() => {
-    setTimeout(() => {
-      $('.error').slideUp(() => {
-      })      
-    }, 4000);
+    //do nothing
   })
 }
 
