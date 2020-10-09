@@ -12,17 +12,17 @@ const createTweetElement = (tweetData) => {
   const { text } = tweetData.content;
   const dateCreated = tweetData.created_at;
   return ` <article class="tweets">
-  <header> 
+  <header>
     <div>
       <img src=${avatars} />
       <p>${name}</p>   
       </div>
       <p class='username'>${handle}</p>
-  </header>  
+  </header>
   <p class="new-tweet-area"> ${escape(text)}</p>
-  <footer> 
-    <p>${time(dateCreated)}</p>  
-    <div> 
+  <footer>
+    <p>${time(dateCreated)}</p>
+    <div>
       <i class="fas fa-flag"></i>
       <i class="fas fa-retweet"></i> 
       <i class="fas fa-heart"></i>
