@@ -5,8 +5,20 @@
   flex-direction: column;
   background-color: #f5f5f5;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  padding-top: 150px; 
-  height: 550px;
+  padding-top: 10px; 
+  height: 400px;
   width: 100%;
   color: #606060;
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .header {
+    display: flex;
+    justify-content: end;
+    align-self: flex-start;
+    width: 40%;
+    margin-top: 6em;
+    margin-left: 1em;
+  }
 }

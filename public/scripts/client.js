@@ -1,10 +1,12 @@
 
+// Makes body for tweet
 const escape = (str) => {
   const div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
+// Takes in tweet info and creates new tweet
 const createTweetElement = (tweetData) => {
   const { name, avatars, handle } = tweetData.user;
   const { text } = tweetData.content;
@@ -21,9 +23,9 @@ const createTweetElement = (tweetData) => {
   <footer> 
     <p>${time(dateCreated)}</p>  
     <div> 
-      <p>1</p> 
-      <p>2</p> 
-      <p>3</p> 
+      <i class="fas fa-flag"></i>
+      <i class="fas fa-retweet"></i> 
+      <i class="fas fa-heart"></i>
     </div>
   </footer>
  </article>`
@@ -31,8 +33,7 @@ const createTweetElement = (tweetData) => {
  };
 
 
-
-
+// Render Tweet onto the Tweeter HTML
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     let $tweet = createTweetElement(tweet)
@@ -42,9 +43,8 @@ const renderTweets = function(tweets) {
 
 let message = false
 
-//processes the post req for tweet then starts get process to post it
 $(document).ready(() => {  
-  loadTweets() //When doc loaded calls renderTweets 
+  loadTweets()
   $('form').on('submit', event => { 
     event.preventDefault() 
     if (message === true) {
@@ -63,12 +63,12 @@ $(document).ready(() => {
       } else if (isGood(postData) === false) {
         message = true
         $('form').slideDown(() => {
-          sendAlert('Your Chirp Box is Empty')
+          sendMessage('Your Chirp Box is Empty')
         })
       } else {
         $('form').slideDown(()=> {
           message = true 
-          sendAlert('Your Chirp is Too Long')
+          sendMessage('Your Chirp is Too Long')
       })
     }
   }) 
@@ -81,10 +81,10 @@ $('.error').slideUp(() => {
   })
 };
 
-const sendAlert = function (errorType) {
+const sendMessage = function (errorType) {
   $('.error').text(errorType)             
   $('.error').slideDown(() => {
-    //do nothing
+    //shouldn't do anything here
   })
 }
 
@@ -100,6 +100,7 @@ const loadTweets = () => {
   })
 } 
 
+// Validates if the tweet is too long or not
 const isGood = (tweet) => {
   if (tweet.length >= 1 && tweet.length <= 140) {
     return true;
@@ -110,6 +111,7 @@ const isGood = (tweet) => {
   }
 }
 
+// Formats the ms to how many seconds/minutes/hours etc.
 const time = ms => {
   const difference = Date.now() - ms;
   if (difference < 1000) {

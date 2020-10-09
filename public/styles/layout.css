@@ -45,7 +45,7 @@ body {
   border-radius: 20px;
   background-color: white;
   opacity: 0.7;
-  margin-top: 10px;
+  margin-top: 25px;
   margin-bottom: 10px;
   flex-direction: column; 
 }
@@ -56,6 +56,7 @@ body {
   color: black;
   margin-left: 3em;
   margin-right: 3em;
+  overflow-wrap: anywhere;
 }
 
 #tweet-text {
@@ -67,7 +68,6 @@ main {
   display: flex; 
   flex-direction: column;  
   align-items: center; 
-  z-index:2;
 } 
 
 /* Div that holds the name from Header */
@@ -100,6 +100,8 @@ footer div {
   display: flex;
   flex-direction: row;
   padding-right: 3em;
+  margin-top: 1em;
+  color: #4056a1;
 }
 
 .tweets:hover {
@@ -122,10 +124,28 @@ footer div {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 5em;
+  align-items: center;
   width: 90%
 }
 
+/* Color of font on counter */
 .color-counter {
   color: red;
+}
+
+@media only screen and (min-width: 1024px) {
+
+  body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    width: 50%;
+    margin-top: 6em;
+  }
 }
