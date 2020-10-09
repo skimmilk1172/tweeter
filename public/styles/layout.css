@@ -34,73 +34,98 @@ body {
   flex-direction: column;
   align-items: center;
   width: 90%;
-  background-color: #f4f1ec;
   margin: 0 auto;
 }
 
-article {
+/* Article */
+.tweets {
+  display: flex;
+  justify-content: center;
   width: 90%;
-  border: 1px solid black;
   border-radius: 20px;
   background-color: white;
   opacity: 0.7;
-  margin-top: 50px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-direction: column; 
 }
 
-article header {
+/* New tweet that's been generated */
+.new-tweet-area {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  background-color:white;
-  border-radius: 18px;
-  height: auto;
-  padding: 10px;
+  color: black;
+  margin-left: 3em;
+  margin-right: 3em;
 }
 
-/* Username */
-.tweet-handle {
-  visibility: hidden;
+#tweet-text {
+  margin-left: 10em;
+}
+
+/* Container */
+main {
+  display: flex; 
+  flex-direction: column;  
+  align-items: center; 
+  z-index:2;
+} 
+
+/* Div that holds the name from Header */
+.tweets header div {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
 }
-/* Username pop up when hovering over */
-article:hover span{
+
+
+.tweets header {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
+  height: 80%;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.tweets footer {
+  display: flex; 
+  border-top: 3px black solid;  
+  font-size: 16px; 
+  justify-content: space-between;
+  margin-left: 1em;;
+} 
+
+/* Three Images for Likes, Retweet, and Share */
+footer div {
+  display: flex;
+  flex-direction: row;
+  padding-right: 3em;
+}
+
+.tweets:hover {
+  box-shadow: 10px 10px 10px grey;
+}
+
+.username {
+  visibility: hidden;
+  color: black;
+  width: 5em;
+  margin-right: 2em;
+} 
+
+.tweets:hover .username {
   visibility: visible;
 }
 
-/* Full Name */
-header span {
+/* Section for all the Tweets */
+#section {
   display: flex;
-  justify-content: flex-start;
-  align-items: initial;
-
-}
-/* Tweet Insert */
-section span {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-
-footer span {
-  display: flex;
-  padding: 10px;
-  font-size: 12px;
-  border-top: 1px solid black;
-}
-
-article:hover {
-  opacity: 1;
-  color: black;
-  box-shadow: 10px 10px 10px grey;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 5em;
+  width: 90%
 }
 
 .color-counter {
   color: red;
 }
-

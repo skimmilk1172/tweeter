@@ -45,29 +45,38 @@
   </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-
-      <form  id='new-tweet-area' action ='/tweets' method='POST'>
-        
-        <textarea name="text" id="tweet-area" placeholder="What are you chripin' about?"></textarea>
-        <div>
-          <button class='button' type="submit">Tweet</button>
-          <span class="error"></span>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-    <section id="tweets-container"></section>
-  </main>
-  <button id="to-top">
-    <i id="to-top-icon" class="fas fa-angle-double-up"></i>
-  </button>
-</body>
-<!--App JS that needs to load after body-->
-<script
-  type="text/javascript"
-  src="/scripts/composer-char-counter.js"
-></script>
-<script type="text/javascript" src="/scripts/client.js"></script>
+    <main class="container">  
+      <!-- New Tweet Form -->
+      <div class='error'></div>
+      <section class="new-tweet"> 
+        <form method="POST" action="/tweets">
+          <textarea name="text" id="tweet-area" placeholder="What are you Chirpin' about?"></textarea>
+          <div class="buttons">
+            <button class="button" type="submit">Tweet</button>
+            <output class="counter" id="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section> 
+      <section id='section'>
+        <article class="tweets">
+          <header>
+            <div>
+              <img>
+              <p class='name'></p>   
+            </div>
+            <p class="username"></p>
+          </header>  
+          <p></p>
+          <footer> 
+            <p></p>  
+            <div> 
+              <p>1</p>           
+              <p>2</p> 
+              <p>3</p> 
+            </div>
+          </footer>
+        </article>
+      </section> 
+    </main>
+  </body> 
 </html>

@@ -9,6 +9,7 @@ nav {
   padding: 1.5em;
   position: fixed;
   top: 0;
+  z-index:1;
  }
 
  span.title {
