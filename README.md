@@ -16,7 +16,7 @@ This repository is the starter code for the project: Students will fork and clon
 - Express
 - Node 5.10.x or above
 
-##Screenshots
+## Screenshots
 
 !['Home Page of Tweeter'] (https://github.com/skimmilk1172/tweeter/blob/master/docs/home-page.png)
 !['Empty box Prompt'] (https://github.com/skimmilk1172/tweeter/blob/master/docs/empty-box.png)
